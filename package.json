@@ -1,0 +1,27 @@
+{
+  "name": "vue-mce",
+  "version": "1.0.0",
+  "description": "VueJS component for TinyMCE",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eazymov/vue-mce.git"
+  },
+  "keywords": [
+    "vuejs",
+    "vue",
+    "tinymce",
+    "component",
+    "eazymov",
+    "javascript"
+  ],
+  "author": "Eazymov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eazymov/vue-mce/issues"
+  },
+  "homepage": "https://github.com/Eazymov/vue-mce#readme"
+}
