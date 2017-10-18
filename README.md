@@ -1,2 +1,2 @@
 # vue-mce
-VueJS component for TinyMCE
+Best VueJS component for TinyMCE

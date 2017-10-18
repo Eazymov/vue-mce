@@ -14,11 +14,7 @@
     props: {
       config: {
         type: Object,
-        default: defaultConfig,
-      },
-      editAreaClass: {
-        type: String,
-        default: '',
+        default: () => defaultConfig,
       },
       value: {
         type: String,
@@ -29,7 +25,6 @@
     data: () => ({
       instance: null,
       error: null,
-      document: null,
     }),
     
     computed: {
@@ -50,15 +45,9 @@
       handleSuccess (editor) {
         this.instance = editor;
         this.$emit('init', editor);
-        this.setDocument(this.$el);
-        this.document.classList.add(this.editAreaClass);
 
-        editor.on('input', this.handleInput);
+        editor.on('input change', this.handleInput);
         editor.on('change', this.handleChange);
-      },
-      
-      setDocument ($root) {
-        this.document = $root.querySelector('iframe').contentDocument.body;
       },
       
       handleInput (event) {
@@ -68,7 +57,6 @@
       handleChange (event) {
         const content = this.content;
 
-        this.$emit('input', content);
         this.$emit('change', content);
       },
     },
@@ -91,75 +79,65 @@
       this.$emit('destroy', this.instance);
       window.tinymce.remove(this.$refs.textarea);
     },
-    
-    watch: {
-      value (value) {
-        const instance = this.instance;
-        
-        if (instance) {
-          instance.setContent(value);
-        }
-      },
-    },
   };
 </script>
 
 <style lang="css">
-.tinymce {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-  
-  .tinymce__err-layout {
-    background-color: rgba(#fff, .8);
-    transition: .3s ease-out;
-    justify-content: center;
-    pointer-events: none;
-    align-items: center;
-    position: absolute;
-    display: flex;
+  .tinymce {
+    position: relative;
     height: 100%;
     width: 100%;
-    z-index: 2;
-    opacity: 0;
-    left: 0;
-    top: 0;
   }
     
-    .tinymce__err-layout.active {
-      opacity: 1;
-    }
-    
-    .tinymce__err-layout__err-text {
-      text-align: center;
-      font-weight: 500;
-      max-width: 200px;
-      line-height: 1.4;
-      font-size: 1rem;
-      color: #f44336;
-    }
-
-  .tinymce > .mce-container {
-    box-sizing: border-box;
-    height: 100%;
-  }
-    
-    .tinymce > .mce-container > .mce-container-body {
-      flex-flow: column;
+    .tinymce__err-layout {
+      background-color: rgba(#fff, .8);
+      transition: .3s ease-out;
+      justify-content: center;
+      pointer-events: none;
+      align-items: center;
+      position: absolute;
       display: flex;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      opacity: 0;
+      left: 0;
+      top: 0;
+    }
+      
+      .tinymce__err-layout.active {
+        opacity: 1;
+      }
+      
+      .tinymce__err-layout__err-text {
+        text-align: center;
+        font-weight: 500;
+        max-width: 200px;
+        line-height: 1.4;
+        font-size: 1rem;
+        color: #f44336;
+      }
+
+    .tinymce > .mce-container {
+      box-sizing: border-box;
       height: 100%;
     }
       
-      .mce-edit-area {
+      .tinymce > .mce-container > .mce-container-body {
         flex-flow: column;
         display: flex;
-        flex-grow: 1;
+        height: 100%;
       }
         
-        iframe {
-          height: 100% !important;
+        .mce-edit-area {
+          flex-flow: column;
+          display: flex;
           flex-grow: 1;
         }
+          
+          iframe {
+            height: 100% !important;
+            flex-grow: 1;
+          }
 </style>
 
