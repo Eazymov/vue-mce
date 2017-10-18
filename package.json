@@ -30,6 +30,11 @@
     "url": "https://github.com/Eazymov/vue-mce/issues"
   },
   "homepage": "https://github.com/Eazymov/vue-mce#readme",
+  "files": [
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
@@ -40,8 +45,5 @@
     "vue-loader": "^13.3.0",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.8.1"
-  },
-  "dependencies": {
-    "vue": "^2.5.2"
   }
 }
