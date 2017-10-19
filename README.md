@@ -16,7 +16,7 @@ yarn add vue-mce
 
 ## [Live example](https://codepen.io/Eazymov/full/MEzGYv/)
 
-<center style="text-align: center;"><img alt="Logo" src="http://res.cloudinary.com/dbkd5ucah/image/upload/v1508394659/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_lovcpu.png" /></center>
+<p style="text-align: center;"><img alt="Logo" src="http://res.cloudinary.com/dbkd5ucah/image/upload/v1508394659/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_lovcpu.png" /></p>
 
 ## Usage
 
