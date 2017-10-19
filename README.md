@@ -20,4 +20,7 @@ yarn add vue-mce
 
 ## Usage
 
-> Will be added later
+### Vie <script /> tag:
+```javascript
+<script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
+```
