@@ -7,8 +7,11 @@
 ## Installation
 
 ### Direct <script /> include:
-Simply include with a script tag. VueMce will be registered as a global component.
+Include VueMce **after** vue and tinymce. VueMce will be registered as a global component.
+
 ```html
+<script src="link/to/tinymce"></script>
+<script src="link/to/vue"></script>
 <script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
 ```
 Make sure that you include this script **after** your 
