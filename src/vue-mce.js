@@ -4,10 +4,18 @@ if (window && window.Vue) {
   Vue.component('vue-mce', component);
 }
 
-const Plugin = (Vue) => {
-  if (Plugin.installed) return false;
+const VueMce = {
+  component,
 
-  Vue.component('vue-mce', component);
+  install (Vue) {
+    if (VueMce.installed) return false;
+  
+    Vue.component('vue-mce', component);
+  }
 }
 
-export default Plugin;
+export {
+  component,
+};
+
+export default VueMce;
