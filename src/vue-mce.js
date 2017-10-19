@@ -10,7 +10,7 @@ const VueMce = {
   }
 }
 
-if (window && window.Vue) {
+if (window) {
 
   window.VueMce = VueMce;
 
