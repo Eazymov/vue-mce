@@ -67,6 +67,11 @@ By default VueMce requires no props, you can simply do this:
 ### Config
 
 You can pass to VueMce component any valid tinymce config that you want to use:
+```html
+<template>
+  <vue-mce :config="config" />
+</template>
+```
 ```javascript
 const config = {
   theme: 'modern',
