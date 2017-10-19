@@ -49,6 +49,14 @@
         editor.on('input change', this.handleInput);
         editor.on('change', this.handleChange);
       },
+
+      setContent (content) {
+        const instance = this.instance;
+
+        if (instance) {
+          instance.setContent(content);
+        }
+      },
       
       handleInput (event) {
         this.$emit('input', this.content);
