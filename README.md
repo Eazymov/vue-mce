@@ -20,7 +20,8 @@ yarn add vue-mce
 
 ## Usage
 
-### Vie <script /> tag:
+### Via <script /> tag:
+Include it into your html code **after** script that includes Vue.js and tinymce
 ```javascript
 <script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
 ```
