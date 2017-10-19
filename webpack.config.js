@@ -18,6 +18,12 @@ module.exports = {
       }, {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            test: /\.sass$/,
+            laoder: 'style-loader!css-loader!sass-loader',
+          },
+        },
       },
     ]
   },
