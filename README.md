@@ -81,7 +81,9 @@ new Vue({
   }),
 });
 ```
-<span style="color: red;">!Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.</span>
+```diff
+- **!Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
+```
 ### v-model
 You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
 ```html
@@ -89,7 +91,9 @@ You can use the `v-model` directive to create data-binding. Every time you chang
   <vue-mce v-model="myValue" />
 </template>
 ```
-**!Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
+```diff
+- **!Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
+```
 ## ref
 If you need to set editor content after init, you can simply set ref to this component and call this.$refs['YOUR_REF'].setContent(yourContent)
 ```html
