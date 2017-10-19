@@ -15,14 +15,6 @@ Include VueMce **after** vue and tinymce. VueMce will be registered as a global 
 <script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
 ```
 
-### When used with a module system, you must explicitly install VueMce via Vue.use():
-```javascript
-import Vue from 'vue';
-import VueMce from 'vue-mce';
-
-Vue.use(VueMce);
-```
-
 ### NPM
 ```bash
 npm install vue-mce --save
@@ -31,6 +23,14 @@ npm install vue-mce --save
 ```bash
 yarn add vue-mce
 ```
+### When used with a module system, you must explicitly install VueMce via Vue.use():
+```javascript
+import Vue from 'vue';
+import VueMce from 'vue-mce';
+
+Vue.use(VueMce);
+```
+You don't need to do this when using global script tags.
 
 ## [Live example](https://codepen.io/Eazymov/full/MEzGYv/)
 
