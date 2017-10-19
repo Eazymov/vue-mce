@@ -12,7 +12,7 @@ Include VueMce **after** vue and tinymce. VueMce will be registered as a global 
 ```html
 <script src="link/to/tinymce"></script>
 <script src="link/to/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-mce@latest/dist/vue-mce.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-mce@latest/dist/vue-mce.min.js"></script>
 ```
 
 ### NPM
@@ -30,6 +30,17 @@ import VueMce from 'vue-mce';
 
 Vue.use(VueMce);
 ```
+It is possible to import **only** component to have possibility register it locally:
+```javascript
+import { component } from 'vue-mce';
+
+const MyComponent = {
+  components: {
+    'vue-mce': component,
+    },
+  },
+};
+```
 You don't need to do this when using global script tags.
 
 ## [Live example](https://codepen.io/Eazymov/full/MEzGYv/)
@@ -38,4 +49,10 @@ You don't need to do this when using global script tags.
 
 ## Usage
 
-> Will be added soon
+### Props
+By default VueMce requires no props, you can simply do this:
+```html
+<whatever>
+  <vue-mce />
+</whatever>
+```
