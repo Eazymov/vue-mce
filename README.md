@@ -30,6 +30,17 @@ import VueMce from 'vue-mce';
 
 Vue.use(VueMce);
 ```
+It is possible to import **only** component to have possibility register it locally:
+```javascript
+import { VueMce } from 'vue-mce';
+
+const MyComponent = {
+  components: {
+    'vue-mce': VueMce,
+    },
+  },
+};
+```
 You don't need to do this when using global script tags.
 
 ## [Live example](https://codepen.io/Eazymov/full/MEzGYv/)
@@ -38,4 +49,10 @@ You don't need to do this when using global script tags.
 
 ## Usage
 
-> Will be added soon
+### Props
+By default VueMce requires no props, you can simply do this:
+```html
+<whatever>
+  <vue-mce />
+</whatever>
+```
