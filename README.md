@@ -14,7 +14,6 @@ Include VueMce **after** vue and tinymce. VueMce will be registered as a global 
 <script src="link/to/vue"></script>
 <script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
 ```
-Make sure that you include this script **after** your 
 
 ### When used with a module system, you must explicitly install VueMce via Vue.use():
 ```javascript
