@@ -77,11 +77,11 @@ You can pass the `value` prop to VueMce component:
 ```javascript
 new Vue({
   data: () => ({
-    myValue: 'Hello World!",
+    myValue: 'Hello World!',
   }),
 });
 ```
-**!Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
+<span style="color: red;">!Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.</span>
 ### v-model
 You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
 ```html
