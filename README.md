@@ -22,6 +22,16 @@ yarn add vue-mce
 
 ### Via <script /> tag:
 Include it into your html code **after** script that includes Vue.js and tinymce
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
+```
+
+### Via es6 module system:
+```javascript
+import Vue from 'vue';
+import VueMce from 'vue-mce';
+
+Vue.use(VueMce);
+
+/* That's it! */
 ```
