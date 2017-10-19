@@ -14,7 +14,7 @@ or
 yarn add vue-mce
 ```
 
-**[LIVE EXAMPLE](https://codepen.io/Eazymov/full/MEzGYv/)**
+## [Live example](https://codepen.io/Eazymov/full/MEzGYv/)
 
 ## Usage
 
