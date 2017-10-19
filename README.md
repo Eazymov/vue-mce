@@ -81,5 +81,72 @@ new Vue({
   }),
 });
 ```
+**!Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
+### v-model
+You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
+```html
+<template>
+  <vue-mce v-model="myValue" />
+</template>
+```
+**!Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
+## ref
+If you need to set editor content after init, you can simply set ref to this component and call this.$refs['YOUR_REF'].setContent(yourContent)
+```html
+<template>
+  <vue-mce ref="editor" />
+</template>
+```
+```javascript
+new Vue({
 
-<span style="color: red;">Important: if you will change the value **after** VueMce component init, it won't trigger update in editor.</span>
+  methods: {
+    getData () {
+      API.get()
+        .then((res) => {
+          this.$refs['myRef'].setContent(res.content);
+        });
+    },
+  },
+  
+  created () {
+    this.getData();
+  },
+});
+```
+## Events
+VueMce provides 4 types of events: init, input, change, destroy
+```html
+<template>
+  <vue-mce
+    @init="handleInit"
+    @input="handleInput"
+    @change="handleChange"
+    @destroy="handleDestroy"
+  />
+</template>
+```
+```javascript
+new Vue({
+
+  methods: {
+    handleInit (editor) {
+      /* This handler fires when tinymce editor is successfully initialized. Receives tinymce editor instance as argument
+      
+         You can save the editor instance to variable and call editor.setContent(yourContent) any time you want */
+    },
+    
+    handleInput (value) {
+      /* Fires whenever editor content changes. Receives generated HTML */
+    },
+    
+    handleChange (value) {
+      /* Fires only when editor emits focusout event. Receives generated HTML */
+    },
+    
+    handleDestroy (editor) {
+      /* Fires before VueMce component destroys. Receives tinymce editor instance */
+    },
+  },
+});
+```
