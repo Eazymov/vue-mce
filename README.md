@@ -6,10 +6,26 @@
 
 ## Installation
 
-```bash
-npm install --save vue-mce
+### Direct <script /> include:
+Simply include with a script tag. VueMce will be registered as a global component.
+```html
+<script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
 ```
-or
+Make sure that you include this script **after** your 
+
+### When used with a module system, you must explicitly install VueMce via Vue.use():
+```javascript
+import Vue from 'vue';
+import VueMce from 'vue-mce';
+
+Vue.use(VueMce);
+```
+
+### NPM
+```bash
+npm install vue-mce --save
+```
+### Yarn
 ```bash
 yarn add vue-mce
 ```
@@ -20,18 +36,4 @@ yarn add vue-mce
 
 ## Usage
 
-### Via <script /> tag:
-Include it into your html code **after** script that includes Vue.js and tinymce
-```html
-<script src="https://cdn.jsdelivr.net/gh/Eazymov/vue-mce@1.0.0/dist/vue-mce.js"></script>
-```
-
-### Via es6 module system:
-```javascript
-import Vue from 'vue';
-import VueMce from 'vue-mce';
-
-Vue.use(VueMce);
-
-/* That's it! */
-```
+> Will be added soon
