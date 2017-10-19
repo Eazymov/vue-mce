@@ -7,6 +7,7 @@
 ## Installation
 
 ### Direct `<script />` include:
+
 Include VueMce **after** vue and tinymce. VueMce will be registered as a global component.
 
 ```html
@@ -16,14 +17,19 @@ Include VueMce **after** vue and tinymce. VueMce will be registered as a global 
 ```
 
 ### NPM
+
 ```bash
 npm install vue-mce --save
 ```
+
 ### Yarn
+
 ```bash
 yarn add vue-mce
 ```
+
 ### When used with a module system, you must explicitly install VueMce via Vue.use():
+
 ```javascript
 import Vue from 'vue';
 import VueMce from 'vue-mce';
@@ -50,13 +56,16 @@ You don't need to do this when using global script tags.
 ## Usage
 
 ## Props
+
 By default VueMce requires no props, you can simply do this:
 ```html
 <whatever>
   <vue-mce />
 </whatever>
 ```
+
 ### Config
+
 You can pass to VueMce component any valid tinymce config that you want to use:
 ```javascript
 const config = {
@@ -67,7 +76,9 @@ const config = {
 };
 ```
 Make sure that you don't pass to config `selector` field because it have priority over the `target` field which VueMce uses to mount component
+
 ### Value
+
 You can pass the `value` prop to VueMce component:
 ```html
 <template>
@@ -82,7 +93,9 @@ new Vue({
 });
 ```
 **Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
+
 ### v-model
+
 You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
 ```html
 <template>
@@ -90,7 +103,9 @@ You can use the `v-model` directive to create data-binding. Every time you chang
 </template>
 ```
 **Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
+
 ## ref
+
 If you need to set editor content after init, you can simply set ref to this component and call `this.$refs['YOUR_REF'].setContent(yourContent)`
 ```html
 <template>
@@ -114,7 +129,9 @@ new Vue({
   },
 });
 ```
+
 ## Events
+
 VueMce provides 4 types of events: init, input, change, destroy
 ```html
 <template>
@@ -152,7 +169,9 @@ new Vue({
   },
 });
 ```
+
 ## Questions
+
 If you have any questions you can text me on [email](mailto:eazymovcode@gmail.com) any time
 
 ## License
