@@ -6,7 +6,7 @@
 
 ## Installation
 
-### Direct <script /> include:
+### Direct `<script />` include:
 Include VueMce **after** vue and tinymce. VueMce will be registered as a global component.
 
 ```html
@@ -67,3 +67,18 @@ const config = {
 };
 ```
 Make sure that you don't pass to config `selector` field because it have priority over the `target` field which VueMce uses to mount component
+### Value
+You can pass the `value` prop to VueMce component:
+```html
+<template>
+  <vue-mce :value="myValue" />
+</template>
+```
+```javascript
+new Vue({
+  data: () => ({
+    myValue: 'Hello World!",
+  }),
+});
+```
+<p style="color: red;">!Important: if you will change the value **after** VueMce component init, it won't trigger update in editor.</p>
