@@ -91,7 +91,7 @@ You can use the `v-model` directive to create data-binding. Every time you chang
 ```
 **Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
 ## ref
-If you need to set editor content after init, you can simply set ref to this component and call this.$refs['YOUR_REF'].setContent(yourContent)
+If you need to set editor content after init, you can simply set ref to this component and call `this.$refs['YOUR_REF'].setContent(yourContent)`
 ```html
 <template>
   <vue-mce ref="editor" />
@@ -104,7 +104,7 @@ new Vue({
     getData () {
       API.get()
         .then((res) => {
-          this.$refs['myRef'].setContent(res.content);
+          this.$refs['YOUR_REF'].setContent(res.content);
         });
     },
   },
@@ -131,9 +131,11 @@ new Vue({
 
   methods: {
     handleInit (editor) {
-      /* This handler fires when tinymce editor is successfully initialized. Receives tinymce editor instance as argument
+      /* This handler fires when tinymce editor is successfully initialized.
+         Receives tinymce editor instance as argument
       
-         You can save the editor instance to variable and call editor.setContent(yourContent) any time you want */
+         You can save the editor instance to variable and
+         call editor.setContent(yourContent) any time you want */
     },
     
     handleInput (value) {
