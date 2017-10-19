@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/vue-mce.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "vue-mce.js",
+    filename: "vue-mce.min.js",
     library: "vue-mce",
     libraryTarget: "umd",
   },
