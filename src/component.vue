@@ -8,13 +8,11 @@
 </template>
 
 <script lang="js">
-  const defaultConfig = {};
-
   export default {
     props: {
       config: {
         type: Object,
-        default: () => defaultConfig,
+        default: () => {},
       },
       value: {
         type: String,
@@ -46,7 +44,7 @@
         this.instance = editor;
         this.$emit('init', editor);
 
-        editor.on('input change', this.handleInput);
+        editor.on('input change undo redo', this.handleInput);
         editor.on('change', this.handleChange);
       },
 
@@ -55,23 +53,25 @@
 
         if (instance) {
           instance.setContent(content);
+
+          return true;
         }
+
+        return false;
       },
       
       handleInput (event) {
-        this.$emit('input', this.content);
+        this.$emit('input', this.instance.getContent());
       },
       
       handleChange (event) {
-        const content = this.content;
-
-        this.$emit('change', content);
+        this.$emit('change', this.instance.getContent());
       },
     },
 
     mounted () {
       if (!window.tinymce) {
-        return this.handleError(new Error('TinyMce wasn\'t found'));
+        return this.handleError(new Error("TinyMce wasn't found"));
       }
 
       const config = this.config;
@@ -96,6 +96,13 @@
     height: 100%;
     width: 100%;
   }
+
+    .tinymce,
+    .tinymce * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
     
     .tinymce__err-layout {
       background-color: #fff;
