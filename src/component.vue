@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="tinymce">
-    <div class="tinymce__err-layout" :class="{ active: error }">
+    <div class="tinymce__err-layout" v-if="error">
       <div class="tinymce__err-layout__err-text">{{ error && error.message }}</div>
     </div>
-    <textarea ref="textarea" rows="10">{{ value }}</textarea>
+    <textarea v-else ref="textarea" rows="10">{{ value }}</textarea>
   </div>
 </template>
 
@@ -90,8 +90,7 @@
   }
     
     .tinymce__err-layout {
-      background-color: rgba(#fff, .8);
-      transition: .3s ease-out;
+      background-color: #fff;
       justify-content: center;
       pointer-events: none;
       align-items: center;
@@ -100,14 +99,9 @@
       height: 100%;
       width: 100%;
       z-index: 2;
-      opacity: 0;
       left: 0;
       top: 0;
     }
-      
-      .tinymce__err-layout.active {
-        opacity: 1;
-      }
       
       .tinymce__err-layout__err-text {
         text-align: center;

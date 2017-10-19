@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require("webpack");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: "./src/vue-mce.js",
@@ -21,4 +21,7 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new UglifyJSPlugin({}),
+  ],
 };
