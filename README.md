@@ -9,6 +9,10 @@
 ```bash
 npm install --save vue-mce
 ```
+or
+```bash
+yarn add vue-mce
+```
 
 ## Usage
 
