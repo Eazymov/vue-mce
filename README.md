@@ -81,4 +81,5 @@ new Vue({
   }),
 });
 ```
-<p style="color: red;">!Important: if you will change the value **after** VueMce component init, it won't trigger update in editor.</p>
+
+<span style="color: red;">Important: if you will change the value **after** VueMce component init, it won't trigger update in editor.</span>
