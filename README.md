@@ -44,7 +44,6 @@ import { component } from 'vue-mce';
 const MyComponent = {
   components: {
     'vue-mce': component,
-    },
   },
 };
 ```
