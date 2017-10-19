@@ -64,7 +64,7 @@ By default VueMce requires no props, you can simply do this:
 </whatever>
 ```
 
-**Config**
+### Config
 
 You can pass to VueMce component any valid tinymce config that you want to use:
 ```html
@@ -82,7 +82,7 @@ const config = {
 ```
 Make sure that you don't pass to config `selector` field because it have priority over the `target` field which VueMce uses to mount component
 
-**Value**
+### Value
 
 You can pass the `value` prop to VueMce component:
 ```html
