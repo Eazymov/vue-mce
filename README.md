@@ -154,3 +154,9 @@ new Vue({
 ```
 ## Questions
 If you have any questions you can text me on [email](mailto:eazymovcode@gmail.com) any time
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017 - present, Eduard Troshin
