@@ -152,3 +152,5 @@ new Vue({
   },
 });
 ```
+## Questions
+If you have any questions you can text me on [email](mailto:eazymovcode@gmail.com) any time
