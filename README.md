@@ -12,7 +12,7 @@ Include VueMce **after** vue and tinymce. VueMce will be registered as a global 
 ```html
 <script src="link/to/tinymce"></script>
 <script src="link/to/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-mce@latest/dist/vue-mce.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-mce@latest/dist/vue-mce.min.js"></script>
 ```
 
 ### NPM
