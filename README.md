@@ -32,11 +32,11 @@ Vue.use(VueMce);
 ```
 It is possible to import **only** component to have possibility register it locally:
 ```javascript
-import { VueMce } from 'vue-mce';
+import { component } from 'vue-mce';
 
 const MyComponent = {
   components: {
-    'vue-mce': VueMce,
+    'vue-mce': component,
     },
   },
 };
