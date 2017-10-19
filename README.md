@@ -53,7 +53,7 @@ You don't need to do this when using global script tags.
 
 <p align="center"><a href="https://codepen.io/Eazymov/full/MEzGYv/"><img alt="Logo" src="http://res.cloudinary.com/dbkd5ucah/image/upload/v1508395086/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_ycxfpq.png" style="display: block; margin: 0 auto;" /></a></p>
 
-## Usage
+# Usage
 
 ## Props
 
@@ -64,7 +64,7 @@ By default VueMce requires no props, you can simply do this:
 </whatever>
 ```
 
-### Config
+**Config**
 
 You can pass to VueMce component any valid tinymce config that you want to use:
 ```html
@@ -82,7 +82,7 @@ const config = {
 ```
 Make sure that you don't pass to config `selector` field because it have priority over the `target` field which VueMce uses to mount component
 
-### Value
+**Value**
 
 You can pass the `value` prop to VueMce component:
 ```html
@@ -99,7 +99,7 @@ new Vue({
 ```
 **Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
 
-### v-model
+## v-model
 
 You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
 ```html
