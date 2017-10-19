@@ -2,7 +2,7 @@
   "name": "vue-mce",
   "version": "1.0.0",
   "description": "VueJS component for TinyMCE",
-  "main": "dist/vue-mce.js",
+  "main": "dist/vue-mce.min.js",
   "maintainers": [
     {
       "name": "Eazymov",
