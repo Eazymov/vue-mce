@@ -146,6 +146,7 @@ VueMce provides 4 types of events: init, input, change, destroy
 <template>
   <vue-mce
     @init="handleInit"
+    @error="handleError"
     @input="handleInput"
     @change="handleChange"
     @destroy="handleDestroy"
@@ -162,6 +163,10 @@ new Vue({
       
          You can save the editor instance to variable and
          call editor.setContent(yourContent) any time you want */
+    },
+    
+    handleError (err) {
+      /* Fires when an error occurred. Receives error object */
     },
     
     handleInput (value) {
