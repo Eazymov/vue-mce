@@ -38,6 +38,7 @@
       handleError (err) {
         this.error = err;
         console.error(err.message);
+        this.$emit('error', err);
       },
 
       handleSuccess (editor) {
