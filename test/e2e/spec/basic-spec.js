@@ -28,11 +28,11 @@ const test = (browser, url) => {
 }
 
 module.exports = {
+  'common build' (browser) {
+    test(browser, 'localhost:8080/test/e2e/spec/basic.common-build.html');
+  },
+
   'web build' (browser) {
     test(browser, 'localhost:8080/test/e2e/spec/basic.web-build.html');
   },
-
-  'common build' (browser) {
-    test(browser, 'localhost:8080/test/e2e/spec/basic.common-build.html');
-  }
 };
