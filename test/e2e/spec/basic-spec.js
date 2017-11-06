@@ -4,7 +4,7 @@ const test = (browser, url) => {
     .url(url)
     .waitForElementVisible('body', 500)
     .pause(500)
-    .waitForElementVisible('iframe', 2000)
+    .waitForElementVisible('iframe', 20000)
     .click('iframe')
     .keys('q')
     .pause(100)
