@@ -153,6 +153,7 @@ new Vue({
 ## Events
 
 VueMce provides 5 types of events: init, error, input, change, destroy
+
 ```html
 <template>
   <vue-mce
