@@ -1,16 +1,16 @@
 import Vue from 'vue';
-import VueMceComponent from './component/index.vue';
+import component from './component/index.vue';
 
 const VueMce = {
-  component: VueMceComponent,
+  component,
 
   installed: false,
 
   install (vm: typeof Vue) {
-    vm.component('vue-mce', VueMceComponent);
+    vm.component('vue-mce', component);
   }
 }
 
-export { VueMceComponent as component };
+export { component };
 
 export default VueMce;

@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="tinymce">
     <div class="tinymce__err-layout" v-if="error">
-      <div class="tinymce__err-layout__err-text">{{ error && error.message }}</div>
+      <div class="tinymce__err-layout__err-text">{{ error.message }}</div>
     </div>
-    <textarea v-else ref="textarea" rows="10">{{ value }}</textarea>
+    <textarea v-else ref="textarea" rows="10">{{ initialValue || value }}</textarea>
   </div>
 </template>
 

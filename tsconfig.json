@@ -9,7 +9,7 @@
     "target": "ESNext",
     "lib": ["es7", "dom"],
     "sourceMap": false,
-    "allowJs": false,
+    "allowJs": true,
     "strict": true,
     "paths": {
       "types": ["./types"]

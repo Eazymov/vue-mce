@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  
+  <title>Web build</title>
+</head>
+<body>
+  <div id="root">
+    <vue-mce
+      v-if="showEditor"
+      @init="handleInit"
+      @error="handleError"
+      @input="handleInput"
+      @change="handleChange"
+      @destroy="handleDestroy"
+      v-model="value"
+      :initial-value="initialValue">
+    </vue-mce>
+    <div id="output" v-html="value"></div>
+    <button id="button" @click="initialValue = 'CHANGED'">Input</button>
+    <button id="destroy" @click="showEditor = false">Destroy</button>
+  </div>
+
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="/node_modules/vue/dist/vue.min.js"></script>
+  <script src="/dist/vue-mce.min.js"></script>
+  <script>
+    new Vue({
+      el: '#root',
+
+      data: () => ({
+        value: '',
+        initialValue: '',
+        showEditor: true,
+      }),
+
+      created () {
+        window.editor = {
+          init: false,
+          error: false,
+          input: false,
+          change: false,
+          destroy: false,
+        };
+      },
+
+      methods: {
+        handleInit () {
+          window.editor.init = true;
+        },
+
+        handleError () {
+          window.editor.error = true;
+        },
+
+        handleInput () {
+          window.editor.input = true;
+        },
+
+        handleChange () {
+          window.editor.change = true;
+        },
+
+        handleDestroy () {
+          window.editor.destroy = true;
+        },
+      },
+    });
+  </script>
+</body>
+</html>

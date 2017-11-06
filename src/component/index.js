@@ -2,9 +2,13 @@ export default {
   props: {
     config: {
       type: Object,
-      default: () => {},
+      default: () => ({}),
     },
     value: {
+      type: String,
+      default: '',
+    },
+    initialValue: {
       type: String,
       default: '',
     },
@@ -35,8 +39,8 @@ export default {
       this.instance = editor;
       this.$emit('init', editor);
 
-      editor.on('input change undo redo', this.handleInput);
-      editor.on('change', this.handleChange);
+      editor.on('input change undo redo setcontent', this.handleInput);
+      editor.on('change setcontent', this.handleChange);
     },
 
     setContent (content) {
@@ -57,6 +61,12 @@ export default {
     
     handleChange () {
       this.$emit('change', this.instance.getContent());
+    },
+  },
+
+  watch: {
+    initialValue (newValue) {
+      this.setContent(newValue);
     },
   },
 

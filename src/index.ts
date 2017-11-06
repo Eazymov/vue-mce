@@ -12,6 +12,6 @@ if (window) {
   window.VueMce = VueMce;
 
   if (window.Vue) {
-    Vue.use(VueMce);
+    window.Vue.use(VueMce);
   }
 }

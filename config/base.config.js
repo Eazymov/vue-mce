@@ -9,7 +9,10 @@ module.exports = {
     libraryTarget: "umd",
   },
   resolve: {
-    extensions: ['.js.', '.ts'],
+    extensions: ['.js', '.ts'],
+    alias: {
+      'package': path.resolve(__dirname, '..', './'),
+    },
   },
   module: {
     rules: [
@@ -20,6 +23,10 @@ module.exports = {
       }, {
         test: /\.ts$/,
         loader: 'ts-loader',
+        exclude: /node_modules/,
+      }, {
+        test: /\.sass$/,
+        loader: 'style-loader!css-loader!sass-loader',
         exclude: /node_modules/,
       }, {
         test: /\.vue$/,

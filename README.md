@@ -104,6 +104,16 @@ new Vue({
 ```
 **Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
 
+## initialValue
+
+VueMce monitors changes in initialValue and updates tinymce content when initialValue changes
+
+```html
+<template>
+  <vue-mce :initial-value="initialValue" />
+</template>
+```
+
 ## v-model
 
 You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
@@ -112,11 +122,11 @@ You can use the `v-model` directive to create data-binding. Every time you chang
   <vue-mce v-model="myValue" />
 </template>
 ```
-**Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init. If you need to update editor content **after** tinymce init, you should read more further.
+**Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init.
 
 ## ref
 
-If you need to set editor content after init, you can simply set ref to this component and call `this.$refs['YOUR_REF'].setContent(yourContent)`
+To set editor content, you can simply set ref to this component and call `this.$refs['YOUR_REF'].setContent(yourContent)`
 ```html
 <template>
   <vue-mce ref="editor" />
@@ -142,7 +152,7 @@ new Vue({
 
 ## Events
 
-VueMce provides 4 types of events: init, input, change, destroy
+VueMce provides 5 types of events: init, error, input, change, destroy
 ```html
 <template>
   <vue-mce
