@@ -59,6 +59,7 @@
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.7",
     "jasmine": "^2.8.0",
+    "jasmine-spec-reporter": "^4.2.1",
     "nightwatch": "^0.9.16",
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
