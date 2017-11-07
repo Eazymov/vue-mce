@@ -1,7 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const http = require('http');
-const spawn = require('cross-spawn');
+import fs from 'fs';
+import path from 'path';
+import http from 'http';
+import spawn from 'cross-spawn';
+
 const server = http.createServer((req, res) => {
   const filePath = path.join(__dirname, '../../', req.url);
   const readStream = fs.createReadStream(filePath);

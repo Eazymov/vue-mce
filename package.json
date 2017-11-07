@@ -22,7 +22,7 @@
     "test": "npm run test:types && npm run test:unit && npm run test:e2e",
     "test:types": "tsc -p test/types/tsconfig.json",
     "test:unit": "babel-node test/unit/runner.js",
-    "test:e2e": "node test/e2e/runner.js"
+    "test:e2e": "babel-node test/e2e/runner.js"
   },
   "repository": {
     "type": "git",
