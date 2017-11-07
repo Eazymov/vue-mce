@@ -9,7 +9,7 @@
   "plugins": [
     ["module-resolver", {
       "alias": {
-        "project": "./"
+        "package": "./"
       }
     }]
   ]

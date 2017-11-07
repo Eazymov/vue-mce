@@ -58,7 +58,6 @@
     "chromedriver": "^2.33.2",
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.7",
-    "http-server": "^0.10.0",
     "jasmine": "^2.8.0",
     "nightwatch": "^0.9.16",
     "node-sass": "^4.6.0",
