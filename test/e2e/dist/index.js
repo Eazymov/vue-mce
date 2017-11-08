@@ -9219,8 +9219,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           staticClass: "tinymce__err-layout__err-text"
         }, [_vm._v(_vm._s(_vm.error.message))])]) : _c('div', {
           ref: "textarea",
-          staticClass: "tinymce__init-area"
-        }, [_vm._v(_vm._s(_vm.initialValue || _vm.value))])]);
+          staticClass: "tinymce__init-area",
+          domProps: {
+            "innerHTML": _vm._s(_vm.initialValue || _vm.value)
+          }
+        })]);
       };
       var staticRenderFns = [];
       render._withStripped = true;
