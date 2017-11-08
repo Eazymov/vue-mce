@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="tinymce">
-    <div class="tinymce__err-layout" v-if="error">
+    <div v-if="error" class="tinymce__err-layout">
       <div class="tinymce__err-layout__err-text">{{ error.message }}</div>
     </div>
-    <textarea v-else ref="textarea" rows="10">{{ initialValue || value }}</textarea>
+    <div v-else class="tinymce__init-area" ref="textarea">{{ initialValue || value }}</div>
   </div>
 </template>
 
@@ -43,6 +43,9 @@
         line-height: 1.4
         font-size: 1rem
         color: #f44336
+
+    &__init-area
+      height: 100%
 
     & > .mce-container
       box-sizing: border-box

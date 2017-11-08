@@ -100,7 +100,7 @@ const VueMce = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_index_js__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_index_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2e63db9d_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_index_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78627430_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(9);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -110,8 +110,6 @@ var normalizeComponent = __webpack_require__(7)
 /* script */
 /* template */
 
-/* template functional */
-  var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -120,14 +118,14 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_index_js___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2e63db9d_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_index_vue__["a" /* default */],
-  __vue_template_functional__,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78627430_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\component\\index.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+Component.options.__file = "src/component/index.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -136,10 +134,10 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2e63db9d", Component.options)
+    hotAPI.createRecord("data-v-78627430", Component.options)
   } else {
-    hotAPI.reload("data-v-2e63db9d", Component.options)
-' + '  }
+    hotAPI.reload("data-v-78627430", Component.options)
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -159,13 +157,13 @@ var content = __webpack_require__(3);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("e6c8ab20", content, false);
+var update = __webpack_require__(5)("2293551a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2e63db9d\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./index.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2e63db9d\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./index.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-78627430\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-78627430\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -183,7 +181,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.tinymce {\n  box-sizing: border-box;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n}\n.tinymce * {\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n}\n.tinymce__err-layout {\n    justify-content: center;\n    background-color: #fff;\n    pointer-events: none;\n    align-items: center;\n    position: absolute;\n    display: flex;\n    height: 100%;\n    width: 100%;\n    z-index: 2;\n    left: 0;\n    top: 0;\n}\n.tinymce__err-layout__err-text {\n      text-align: center;\n      font-weight: 500;\n      max-width: 200px;\n      line-height: 1.4;\n      font-size: 1rem;\n      color: #f44336;\n}\n.tinymce > .mce-container {\n    box-sizing: border-box;\n    height: 100%;\n}\n.tinymce > .mce-container > .mce-container-body {\n      flex-flow: column;\n      display: flex;\n      height: 100%;\n}\n.tinymce > .mce-container > .mce-container-body .mce-edit-area {\n        flex-flow: column;\n        display: flex;\n        flex-grow: 1;\n}\n.tinymce > .mce-container > .mce-container-body .mce-edit-area iframe {\n          flex-grow: 1;\n}\n", ""]);
+exports.push([module.i, "\n.tinymce {\n  box-sizing: border-box;\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n}\n.tinymce * {\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n}\n.tinymce__err-layout {\n    justify-content: center;\n    background-color: #fff;\n    pointer-events: none;\n    align-items: center;\n    position: absolute;\n    display: flex;\n    height: 100%;\n    width: 100%;\n    z-index: 2;\n    left: 0;\n    top: 0;\n}\n.tinymce__err-layout__err-text {\n      text-align: center;\n      font-weight: 500;\n      max-width: 200px;\n      line-height: 1.4;\n      font-size: 1rem;\n      color: #f44336;\n}\n.tinymce__init-area {\n    height: 100%;\n}\n.tinymce > .mce-container {\n    box-sizing: border-box;\n    height: 100%;\n}\n.tinymce > .mce-container > .mce-container-body {\n      flex-flow: column;\n      display: flex;\n      height: 100%;\n}\n.tinymce > .mce-container > .mce-container-body .mce-edit-area {\n        flex-flow: column;\n        display: flex;\n        flex-grow: 1;\n}\n.tinymce > .mce-container > .mce-container-body .mce-edit-area iframe {\n          flex-grow: 1;\n}\n", ""]);
 
 // exports
 
@@ -530,14 +528,12 @@ module.exports = function listToStyles (parentId, list) {
 
 /* globals __VUE_SSR_CONTEXT__ */
 
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
 
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
-  functionalTemplate,
   injectStyles,
   scopeId,
   moduleIdentifier /* server only */
@@ -561,12 +557,6 @@ module.exports = function normalizeComponent (
   if (compiledTemplate) {
     options.render = compiledTemplate.render
     options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
   }
 
   // scopedId
@@ -607,16 +597,12 @@ module.exports = function normalizeComponent (
     var existing = functional
       ? options.render
       : options.beforeCreate
-
     if (!functional) {
       // inject component registration as beforeCreate hook
       options.beforeCreate = existing
         ? [].concat(existing, hook)
         : [hook]
     } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
       // register for functioal component in vue file
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -739,21 +725,17 @@ exports.default = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tinymce" }, [
-    _vm.error
-      ? _c("div", { staticClass: "tinymce__err-layout" }, [
-          _c("div", { staticClass: "tinymce__err-layout__err-text" }, [
-            _vm._v(_vm._s(_vm.error.message))
-          ])
-        ])
-      : _c("textarea", { ref: "textarea", attrs: { rows: "10" } }, [
-          _vm._v(_vm._s(_vm.initialValue || _vm.value))
-        ])
-  ])
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "tinymce"
+  }, [(_vm.error) ? _c('div', {
+    staticClass: "tinymce__err-layout"
+  }, [_c('div', {
+    staticClass: "tinymce__err-layout__err-text"
+  }, [_vm._v(_vm._s(_vm.error.message))])]) : _c('div', {
+    ref: "textarea",
+    staticClass: "tinymce__init-area"
+  }, [_vm._v(_vm._s(_vm.initialValue || _vm.value))])])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -762,7 +744,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2e63db9d", esExports)
+     require("vue-hot-reload-api").rerender("data-v-78627430", esExports)
   }
 }
 
