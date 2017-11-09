@@ -9155,6 +9155,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             this.instance = editor;
             this.$emit('init', editor);
 
+            var content = this.initialValue || this.value;
+
+            editor.setContent(content);
             editor.on('input change undo redo setcontent', this.handleInput);
             editor.on('change setcontent', this.handleChange);
           },
@@ -9219,10 +9222,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           staticClass: "tinymce__err-layout__err-text"
         }, [_vm._v(_vm._s(_vm.error.message))])]) : _c('div', {
           ref: "textarea",
-          staticClass: "tinymce__init-area",
-          domProps: {
-            "innerHTML": _vm._s(_vm.initialValue || _vm.value)
-          }
+          staticClass: "tinymce__init-area"
         })]);
       };
       var staticRenderFns = [];

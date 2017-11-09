@@ -39,6 +39,9 @@ export default {
       this.instance = editor;
       this.$emit('init', editor);
 
+      const content = this.initialValue || this.value;
+
+      editor.setContent(content);
       editor.on('input change undo redo setcontent', this.handleInput);
       editor.on('change setcontent', this.handleChange);
     },

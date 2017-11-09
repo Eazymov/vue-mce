@@ -3,7 +3,7 @@
     <div v-if="error" class="tinymce__err-layout">
       <div class="tinymce__err-layout__err-text">{{ error.message }}</div>
     </div>
-    <div v-else class="tinymce__init-area" ref="textarea" v-html="initialValue || value "></div>
+    <div v-else class="tinymce__init-area" ref="textarea"></div>
   </div>
 </template>
 
