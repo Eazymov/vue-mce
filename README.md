@@ -106,7 +106,7 @@ new Vue({
 
 ## initialValue
 
-VueMce monitors changes in initialValue and updates tinymce content when initialValue changes
+VueMce monitors changes in initialValue and updates tinymce content when initialValue changes. Has priority over the `value` prop.
 
 ```html
 <template>
