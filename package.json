@@ -24,6 +24,7 @@
     "test:unit": "babel-node test/unit/runner.js",
     "test:e2e": "babel-node test/e2e/runner.js"
   },
+  "registry": "github",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eazymov/vue-mce.git"
@@ -36,7 +37,7 @@
     "eazymov",
     "javascript"
   ],
-  "author": "Eazymov",
+  "author": "Eduard Troshin <eazymovcode@gmail.com>",
   "license": "MIT",
   "readme": "",
   "bugs": {
@@ -46,7 +47,9 @@
   "files": [
     "src",
     "dist/*.js",
-    "types/*.d.ts"
+    "types/*.d.ts",
+    "LICENSE",
+    "README.md"
   ],
   "devDependencies": {
     "babel": "^6.23.0",
@@ -75,5 +78,8 @@
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-merge": "^4.1.1"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.3"
   }
 }

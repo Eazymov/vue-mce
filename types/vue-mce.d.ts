@@ -13,8 +13,6 @@ export interface VueMceComponent extends ComponentOptions<Vue> {
 }
 
 export interface VueMce {
-  installed: boolean;
-
   install: PluginFunction<never>;
 
   component: VueMceComponent;
