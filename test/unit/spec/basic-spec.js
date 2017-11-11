@@ -7,10 +7,6 @@ describe('VueSub', function () {
     expect(VueSub.component).toBeDefined();
   });
 
-  it('should have property `installed`', function () {
-    expect(VueSub.installed).toBeDefined();
-  });
-
   it('should have method `install`', function () {
     expect(VueSub.install).toBeDefined();
   });

@@ -16,7 +16,6 @@ export default {
   
   data: () => ({
     instance: null,
-    error: null,
   }),
   
   computed: {
@@ -30,8 +29,6 @@ export default {
   
   methods: {
     handleError (err) {
-      this.error = err;
-      console.error(err.message);
       this.$emit('error', err);
     },
 

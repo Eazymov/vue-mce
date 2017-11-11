@@ -2,8 +2,6 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import VueMce, { VueMceComponent } from 'package';
 
-VueMce.installed = true;
-
 Vue.use(VueMce);
 
 @Component

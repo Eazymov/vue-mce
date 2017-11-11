@@ -4,8 +4,6 @@ import component from './component/index.vue';
 const VueMce = {
   component,
 
-  installed: false,
-
   install (vm: typeof Vue) {
     vm.component('vue-mce', component);
   }

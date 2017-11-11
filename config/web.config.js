@@ -4,7 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = merge(baseConfig, {
   entry: {
-    'vue-mce.min': './src/index.ts',
+    'vue-mce.web': './src/index.ts',
   },
   plugins: [
     new UglifyJSPlugin(),
