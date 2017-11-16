@@ -1,4 +1,4 @@
-# @Eazymov/vue-mce
+# vue-mce
 
 [![npm](https://img.shields.io/npm/v/vue-mce.svg)](https://www.npmjs.com/package/vue-mce)
 [![License](https://img.shields.io/npm/l/vue-mce.svg)](https://www.npmjs.com/package/vue-mce)
