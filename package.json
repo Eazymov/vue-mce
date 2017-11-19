@@ -61,6 +61,7 @@
     "chromedriver": "^2.33.2",
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
     "jasmine": "^2.8.0",
     "jasmine-spec-reporter": "^4.2.1",
     "nightwatch": "^0.9.16",

@@ -1,3 +1,12 @@
+require('dotenv').config();
+
+const path = require('path');
+const host = process.env.TEST_HOST || 'localhost'
+const port = process.env.TEST_PORT || '8080'
+const dir = process.env.E2E_TEST_DIR || '/test/e2e/spec/'
+const resolve = (src) => {
+  return `${host}:${port + dir}` + src;
+}
 
 const test = (browser, url) => {
   browser
@@ -29,10 +38,10 @@ const test = (browser, url) => {
 
 module.exports = {
   'common build' (browser) {
-    test(browser, 'localhost:8080/test/e2e/spec/basic.common-build.html');
+    test(browser, resolve('basic.common-build.html'));
   },
 
   'web build' (browser) {
-    test(browser, 'localhost:8080/test/e2e/spec/basic.web-build.html');
+    test(browser, resolve('basic.web-build.html'));
   },
 };
