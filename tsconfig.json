@@ -6,7 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "module": "es2015",
-    "target": "ESNext",
+    "target": "es5",
     "lib": ["es7", "dom"],
     "sourceMap": false,
     "allowJs": true,

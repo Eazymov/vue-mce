@@ -8505,18 +8505,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       return r.a;
     });var o = { component: r.a, install: function install(e) {
         e.component("vue-mce", r.a);
-      }
-    };t.default = o;
+      } };t.default = o;
   }, function (e, t, n) {
     "use strict";
     var r = n(8),
         o = n.n(r),
         i = n(9),
-        s = !1,
-        a = function a(e) {
-      s || n(2);
+        a = !1,
+        s = function s(e) {
+      a || n(2);
     },
-        c = n(7)(o.a, i.a, a, null, null);c.options.__file = "src/component/index.vue", c.esModule && Object.keys(c.esModule).some(function (e) {
+        c = n(7)(o.a, i.a, s, null, null);c.options.__file = "src/component/index.vue", c.esModule && Object.keys(c.esModule).some(function (e) {
       return "default" !== e && "__" !== e.substr(0, 2);
     }) && console.error("named exports are not supported in *.vue files."), c.options.functional && console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions."), t.a = c.exports;
   }, function (e, t, n) {
@@ -8543,7 +8542,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         "string" == typeof e && (e = [[null, e, ""]]);for (var r = {}, o = 0; o < this.length; o++) {
           var i = this[o][0];"number" == typeof i && (r[i] = !0);
         }for (o = 0; o < e.length; o++) {
-          var s = e[o];"number" == typeof s[0] && r[s[0]] || (n && !s[2] ? s[2] = n : n && (s[2] = "(" + s[2] + ") and (" + n + ")"), t.push(s));
+          var a = e[o];"number" == typeof a[0] && r[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), t.push(a));
         }
       }, t;
     };
@@ -8552,14 +8551,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       for (var t = 0; t < e.length; t++) {
         var n = e[t],
             r = u[n.id];if (r) {
-          r.refs++;for (s = 0; s < r.parts.length; s++) {
-            r.parts[s](n.parts[s]);
-          }for (; s < n.parts.length; s++) {
-            r.parts.push(i(n.parts[s]));
+          r.refs++;for (a = 0; a < r.parts.length; a++) {
+            r.parts[a](n.parts[a]);
+          }for (; a < n.parts.length; a++) {
+            r.parts.push(i(n.parts[a]));
           }r.parts.length > n.parts.length && (r.parts.length = n.parts.length);
         } else {
-          for (var o = [], s = 0; s < n.parts.length; s++) {
-            o.push(i(n.parts[s]));
+          for (var o = [], a = 0; a < n.parts.length; a++) {
+            o.push(i(n.parts[a]));
           }u[n.id] = { id: n.id, refs: 1, parts: o };
         }
       }
@@ -8571,7 +8570,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           r = document.querySelector('style[data-vue-ssr-id~="' + e.id + '"]');if (r) {
         if (p) return h;r.parentNode.removeChild(r);
       }if (m) {
-        var i = l++;r = d || (d = o()), t = s.bind(null, r, i, !1), n = s.bind(null, r, i, !0);
+        var i = l++;r = d || (d = o()), t = a.bind(null, r, i, !1), n = a.bind(null, r, i, !0);
       } else r = o(), t = function (e, t) {
         var n = t.css,
             r = t.media,
@@ -8587,14 +8586,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           if (r.css === e.css && r.media === e.media && r.sourceMap === e.sourceMap) return;t(e = r);
         } else n();
       };
-    }function s(e, t, n, r) {
+    }function a(e, t, n, r) {
       var o = n ? "" : r.css;if (e.styleSheet) e.styleSheet.cssText = v(t, o);else {
         var i = document.createTextNode(o),
-            s = e.childNodes;s[t] && e.removeChild(s[t]), s.length ? e.insertBefore(i, s[t]) : e.appendChild(i);
+            a = e.childNodes;a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(i, a[t]) : e.appendChild(i);
       }
-    }var a = "undefined" != typeof document;if ("undefined" != typeof DEBUG && DEBUG && !a) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var c = n(6),
+    }var s = "undefined" != typeof document;if ("undefined" != typeof DEBUG && DEBUG && !s) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var c = n(6),
         u = {},
-        f = a && (document.head || document.getElementsByTagName("head")[0]),
+        f = s && (document.head || document.getElementsByTagName("head")[0]),
         d = null,
         l = 0,
         p = !1,
@@ -8602,12 +8601,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         m = "undefined" != typeof navigator && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase());e.exports = function (e, t, n) {
       p = n;var o = c(e, t);return r(o), function (t) {
         for (var n = [], i = 0; i < o.length; i++) {
-          var s = o[i];(a = u[s.id]).refs--, n.push(a);
+          var a = o[i];(s = u[a.id]).refs--, n.push(s);
         }t ? r(o = c(e, t)) : o = [];for (i = 0; i < n.length; i++) {
-          var a = n[i];if (0 === a.refs) {
-            for (var f = 0; f < a.parts.length; f++) {
-              a.parts[f]();
-            }delete u[a.id];
+          var s = n[i];if (0 === s.refs) {
+            for (var f = 0; f < s.parts.length; f++) {
+              s.parts[f]();
+            }delete u[s.id];
           }
         }
       };
@@ -8620,22 +8619,22 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     e.exports = function (e, t) {
       for (var n = [], r = {}, o = 0; o < t.length; o++) {
         var i = t[o],
-            s = i[0],
-            a = { id: e + ":" + o, css: i[1], media: i[2], sourceMap: i[3] };r[s] ? r[s].parts.push(a) : n.push(r[s] = { id: s, parts: [a] });
+            a = i[0],
+            s = { id: e + ":" + o, css: i[1], media: i[2], sourceMap: i[3] };r[a] ? r[a].parts.push(s) : n.push(r[a] = { id: a, parts: [s] });
       }return n;
     };
   }, function (e, t) {
     e.exports = function (e, t, n, r, o) {
       var i,
-          s = e = e || {},
-          a = _typeof(e.default);"object" !== a && "function" !== a || (i = e, s = e.default);var c = "function" == typeof s ? s.options : s;t && (c.render = t.render, c.staticRenderFns = t.staticRenderFns), r && (c._scopeId = r);var u;if (o ? (u = function u(e) {
+          a = e = e || {},
+          s = _typeof(e.default);"object" !== s && "function" !== s || (i = e, a = e.default);var c = "function" == typeof a ? a.options : a;t && (c.render = t.render, c.staticRenderFns = t.staticRenderFns), r && (c._scopeId = r);var u;if (o ? (u = function u(e) {
         (e = e || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) || "undefined" == typeof __VUE_SSR_CONTEXT__ || (e = __VUE_SSR_CONTEXT__), n && n.call(this, e), e && e._registeredComponents && e._registeredComponents.add(o);
       }, c._ssrRegister = u) : n && (u = n), u) {
         var f = c.functional,
             d = f ? c.render : c.beforeCreate;f ? c.render = function (e, t) {
           return u.call(t), d(e, t);
         } : c.beforeCreate = d ? [].concat(d, u) : [u];
-      }return { esModule: i, exports: s, options: c };
+      }return { esModule: i, exports: a, options: c };
     };
   }, function (e, t, n) {
     "use strict";
