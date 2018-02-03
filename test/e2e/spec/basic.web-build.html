@@ -13,13 +13,15 @@
 <body>
   <div id="root">
     <vue-mce
+      name="tinymce"
+      v-model="value"
       v-if="showEditor"
       @init="handleInit"
       @error="handleError"
       @input="handleInput"
       @change="handleChange"
       @destroy="handleDestroy"
-      v-model="value"
+      :config="config"
       :initial-value="initialValue">
     </vue-mce>
     <div id="output" v-html="value"></div>
@@ -37,6 +39,7 @@
         value: '',
         initialValue: '',
         showEditor: true,
+        config: {},
       }),
 
       created () {

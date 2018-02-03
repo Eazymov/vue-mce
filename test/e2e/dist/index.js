@@ -8640,7 +8640,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 }), t.default = { props: { config: { type: Object, default: function _default() {
             return {};
-          } }, value: { type: String, default: "" }, initialValue: { type: String, default: "" } }, data: function data() {
+          } }, value: { type: String, default: "" }, initialValue: { type: String, default: "" }, name: { type: String, default: "" } }, data: function data() {
         return { instance: null };
       }, computed: { content: { cache: !1, get: function get() {
             return this.instance.getContent();
@@ -8666,7 +8666,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     "use strict";
     var r = function r() {
       var e = this.$createElement,
-          t = this._self._c || e;return t("div", { staticClass: "tinymce" }, [t("div", { ref: "textarea", staticClass: "tinymce__init-area" })]);
+          t = this._self._c || e;return t("div", { staticClass: "tinymce" }, [t(this.config.inline ? "div" : "textarea", { ref: "textarea", tag: "component", staticClass: "tinymce__init-area", attrs: { name: this.name } })], 1);
     };r._withStripped = !0;var o = { render: r, staticRenderFns: [] };t.a = o;
   }]);
 });
