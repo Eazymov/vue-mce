@@ -19,17 +19,9 @@ export default {
   },
   
   data: () => ({
-    instance: null,
+    editorInstance: null,
+    content: '',
   }),
-  
-  computed: {
-    content: {
-      cache: false,
-      get () {
-        return this.instance.getContent();
-      },
-    },
-  },
   
   methods: {
     handleError (err) {
@@ -37,7 +29,7 @@ export default {
     },
 
     handleSuccess (editor) {
-      this.instance = editor;
+      this.editorInstance = editor;
       this.$emit('init', editor);
 
       const content = this.initialValue || this.value;
@@ -48,23 +40,25 @@ export default {
     },
 
     setContent (content) {
-      const instance = this.instance;
-
-      if (instance) {
-        instance.setContent(content);
-
-        return true;
+      try {
+        this.editorInstance.setContent(content);
+      } catch (err) {
+        this.handleError(err);
       }
+    },
 
-      return false;
+    getContent () {
+      return this.editorInstance.getContent();
     },
     
     handleInput () {
-      this.$emit('input', this.instance.getContent());
+      const content = this.editorInstance.getContent();
+      this.content = content;
+      this.$emit('input', content);
     },
     
     handleChange () {
-      this.$emit('change', this.instance.getContent());
+      this.$emit('change', this.content);
     },
   },
 
@@ -89,7 +83,7 @@ export default {
   },
   
   beforeDestroy () {
-    this.$emit('destroy', this.instance);
+    this.$emit('destroy', this.editorInstance);
     window.tinymce.remove(this.$refs.textarea);
   },
 };

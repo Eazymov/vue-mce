@@ -65,6 +65,10 @@ By default VueMce requires no props, you can simply do this:
 </whatever>
 ```
 
+### Name
+
+html `name` attribute. Useful for non-ajax form submitting
+
 ### Config
 
 You can pass to VueMce component any valid tinymce config that you want to use:
@@ -198,7 +202,7 @@ new Vue({
 
 ## Questions
 
-If you have any troubles or questions you can create the issue or text me on [email](mailto:eazymovcode@gmail.com) any time
+If you have any troubles, questions or proposals you can create the [issue](https://github.com/Eazymov/vue-mce/issues)
 
 ## License
 

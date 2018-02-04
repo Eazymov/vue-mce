@@ -8641,32 +8641,36 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     Object.defineProperty(t, "__esModule", { value: !0 }), t.default = { props: { config: { type: Object, default: function _default() {
             return {};
           } }, value: { type: String, default: "" }, initialValue: { type: String, default: "" }, name: { type: String, default: "" } }, data: function data() {
-        return { instance: null };
-      }, computed: { content: { cache: !1, get: function get() {
-            return this.instance.getContent();
-          } } }, methods: { handleError: function handleError(e) {
+        return { editorInstance: null, content: "" };
+      }, methods: { handleError: function handleError(e) {
           this.$emit("error", e);
         }, handleSuccess: function handleSuccess(e) {
-          this.instance = e, this.$emit("init", e);var t = this.initialValue || this.value;e.setContent(t), e.on("input change undo redo setcontent", this.handleInput), e.on("change setcontent", this.handleChange);
+          this.editorInstance = e, this.$emit("init", e);var t = this.initialValue || this.value;e.setContent(t), e.on("input change undo redo setcontent", this.handleInput), e.on("change setcontent", this.handleChange);
         }, setContent: function setContent(e) {
-          var t = this.instance;return !!t && (t.setContent(e), !0);
+          try {
+            this.editorInstance.setContent(e);
+          } catch (e) {
+            this.handleError(e);
+          }
+        }, getContent: function getContent() {
+          return this.editorInstance.getContent();
         }, handleInput: function handleInput() {
-          this.$emit("input", this.instance.getContent());
+          var e = this.editorInstance.getContent();this.content = e, this.$emit("input", e);
         }, handleChange: function handleChange() {
-          this.$emit("change", this.instance.getContent());
+          this.$emit("change", this.content);
         } }, watch: { initialValue: function initialValue(e) {
           this.setContent(e);
         } }, mounted: function mounted() {
         if (!window.tinymce) return this.handleError(new Error("TinyMce wasn't found"));var e = this.config,
             t = this.$refs.textarea;e.target = t, e.init_instance_callback = this.handleSuccess, window.tinymce.init(e).catch(this.handleError);
       }, beforeDestroy: function beforeDestroy() {
-        this.$emit("destroy", this.instance), window.tinymce.remove(this.$refs.textarea);
+        this.$emit("destroy", this.editorInstance), window.tinymce.remove(this.$refs.textarea);
       } };
   }, function (e, t, n) {
     "use strict";
     var r = function r() {
       var e = this.$createElement,
-          t = this._self._c || e;return t("div", { staticClass: "tinymce" }, [t(this.config.inline ? "div" : "textarea", { ref: "textarea", tag: "component", staticClass: "tinymce__init-area", attrs: { name: this.name } })], 1);
+          t = this._self._c || e;return t("div", { staticClass: "tinymce" }, [t("div", { ref: "textarea", staticClass: "tinymce__init-area" }), this._v(" "), t("input", { attrs: { name: this.name, hidden: "" }, domProps: { value: this.content } })]);
     };r._withStripped = !0;var o = { render: r, staticRenderFns: [] };t.a = o;
   }]);
 });

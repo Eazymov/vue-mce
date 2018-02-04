@@ -1,11 +1,7 @@
 <template lang="html">
   <div class="tinymce">
-    <component
-      :is="config.inline ? 'div' : 'textarea'"
-      class="tinymce__init-area"
-      :name="name"
-      ref="textarea"
-    />
+    <div class="tinymce__init-area" ref="textarea" />
+    <input :name="name" :value="content" hidden />
   </div>
 </template>
 
