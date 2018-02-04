@@ -48,7 +48,14 @@ export default {
     },
 
     getContent () {
-      return this.editorInstance.getContent();
+      const { editorInstance } = this;
+
+      if (editorInstance) {
+        return editorInstance.getContent();
+      }
+
+      this.handleError(new Error('vue-mce is not initialized yet'));
+      return null;
     },
     
     handleInput () {

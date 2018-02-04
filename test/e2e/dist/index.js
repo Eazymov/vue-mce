@@ -8563,14 +8563,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
       }
     }function o() {
-      var e = document.createElement("style");return e.type = "text/css", f.appendChild(e), e;
+      var e = document.createElement("style");return e.type = "text/css", d.appendChild(e), e;
     }function i(e) {
       var t,
           n,
           r = document.querySelector('style[data-vue-ssr-id~="' + e.id + '"]');if (r) {
         if (p) return h;r.parentNode.removeChild(r);
       }if (m) {
-        var i = l++;r = d || (d = o()), t = a.bind(null, r, i, !1), n = a.bind(null, r, i, !0);
+        var i = l++;r = f || (f = o()), t = a.bind(null, r, i, !1), n = a.bind(null, r, i, !0);
       } else r = o(), t = function (e, t) {
         var n = t.css,
             r = t.media,
@@ -8593,8 +8593,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
     }var s = "undefined" != typeof document;if ("undefined" != typeof DEBUG && DEBUG && !s) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var c = n(6),
         u = {},
-        f = s && (document.head || document.getElementsByTagName("head")[0]),
-        d = null,
+        d = s && (document.head || document.getElementsByTagName("head")[0]),
+        f = null,
         l = 0,
         p = !1,
         h = function h() {},
@@ -8604,8 +8604,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           var a = o[i];(s = u[a.id]).refs--, n.push(s);
         }t ? r(o = c(e, t)) : o = [];for (i = 0; i < n.length; i++) {
           var s = n[i];if (0 === s.refs) {
-            for (var f = 0; f < s.parts.length; f++) {
-              s.parts[f]();
+            for (var d = 0; d < s.parts.length; d++) {
+              s.parts[d]();
             }delete u[s.id];
           }
         }
@@ -8630,10 +8630,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           s = _typeof(e.default);"object" !== s && "function" !== s || (i = e, a = e.default);var c = "function" == typeof a ? a.options : a;t && (c.render = t.render, c.staticRenderFns = t.staticRenderFns), r && (c._scopeId = r);var u;if (o ? (u = function u(e) {
         (e = e || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) || "undefined" == typeof __VUE_SSR_CONTEXT__ || (e = __VUE_SSR_CONTEXT__), n && n.call(this, e), e && e._registeredComponents && e._registeredComponents.add(o);
       }, c._ssrRegister = u) : n && (u = n), u) {
-        var f = c.functional,
-            d = f ? c.render : c.beforeCreate;f ? c.render = function (e, t) {
-          return u.call(t), d(e, t);
-        } : c.beforeCreate = d ? [].concat(d, u) : [u];
+        var d = c.functional,
+            f = d ? c.render : c.beforeCreate;d ? c.render = function (e, t) {
+          return u.call(t), f(e, t);
+        } : c.beforeCreate = f ? [].concat(f, u) : [u];
       }return { esModule: i, exports: a, options: c };
     };
   }, function (e, t, n) {
@@ -8653,7 +8653,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             this.handleError(e);
           }
         }, getContent: function getContent() {
-          return this.editorInstance.getContent();
+          var e = this.editorInstance;return e ? e.getContent() : (this.handleError(new Error("vue-mce is not initialized yet")), null);
         }, handleInput: function handleInput() {
           var e = this.editorInstance.getContent();this.content = e, this.$emit("input", e);
         }, handleChange: function handleChange() {
