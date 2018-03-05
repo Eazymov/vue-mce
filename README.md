@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/vue-mce.svg)](https://www.npmjs.com/package/vue-mce)
 [![License](https://img.shields.io/npm/l/vue-mce.svg)](https://www.npmjs.com/package/vue-mce)
 [![Build Status](https://travis-ci.org/Eazymov/vue-mce.svg?branch=master)](https://travis-ci.org/Eazymov/vue-mce)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Eazymov/vue-mce/pulls)
 
 > VueJS component for TinyMCE
 
