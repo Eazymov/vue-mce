@@ -30,7 +30,7 @@ class Test extends Vue {
     return this.editor.handleSuccess(editor)
   }
 
-  public setContent(content: string): boolean {
+  public setContent(content: string): void {
     return this.editor.setContent(content)
   }
 
