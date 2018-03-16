@@ -1,5 +1,14 @@
 const path = require('path')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack')
+
+const pkg = require('../package.json')
+
+const banner =
+  '/*!\n' +
+  ' * vue-mce v' + pkg.version + '\n' +
+  ' * (c) 2017 - Present, Eduard Troshin\n' +
+  ' * Released under the MIT License.\n' +
+  ' */'
 
 module.exports = {
   output: {
@@ -39,4 +48,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.BannerPlugin({ banner }),
+  ],
 }

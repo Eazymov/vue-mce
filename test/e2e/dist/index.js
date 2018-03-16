@@ -8735,7 +8735,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 }("undefined" != typeof self ? self : undefined, function () {
   return function (e) {
     var t = {};function n(r) {
-      if (t[r]) return t[r].exports;var i = t[r] = { i: r, l: !1, exports: {} };return e[r].call(i.exports, i, i.exports, n), i.l = !0, i.exports;
+      if (t[r]) return t[r].exports;var o = t[r] = { i: r, l: !1, exports: {} };return e[r].call(o.exports, o, o.exports, n), o.l = !0, o.exports;
     }return n.m = e, n.c = t, n.d = function (e, t, r) {
       n.o(e, t) || Object.defineProperty(e, t, { configurable: !1, enumerable: !0, get: r });
     }, n.n = function (e) {
@@ -8751,12 +8751,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 }), t.default = { props: { config: { type: Object, default: function _default() {
             return {};
-          } }, value: { type: String, default: "" }, initialValue: { type: String, default: "" }, name: { type: String, default: "" } }, data: function data() {
+          } }, value: { type: String, default: "" }, name: { type: String, default: "" } }, data: function data() {
         return { editorInstance: null, content: "" };
       }, methods: { handleError: function handleError(e) {
-          this.$emit("error", e);
+          console.error(e), this.$emit("error", e);
         }, handleSuccess: function handleSuccess(e) {
-          this.editorInstance = e, this.$emit("init", e);var t = this.initialValue || this.value;e.setContent(t), e.on("input change undo redo setcontent", this.handleInput), e.on("change setcontent", this.handleChange);
+          this.editorInstance = e, this.$emit("init", e);var t = this.value;e.setContent(t), e.on("input change undo redo setcontent", this.handleInput), e.on("change setcontent", this.handleChange);
         }, setContent: function setContent(e) {
           try {
             this.editorInstance.setContent(e);
@@ -8769,10 +8769,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           var e = this.editorInstance.getContent();this.content = e, this.$emit("input", e);
         }, handleChange: function handleChange() {
           this.$emit("change", this.content);
-        } }, watch: { initialValue: function initialValue(e) {
-          this.setContent(e);
+        } }, watch: { value: function value(e) {
+          e !== this.content && this.setContent(e);
         } }, mounted: function mounted() {
-        if (!window.tinymce) return this.handleError(new Error("TinyMce wasn't found"));var e = this.config,
+        if (!window.tinymce) return this.handleError(new Error("TinyMce was not found"));var e = this.config,
             t = this.$refs.textarea;e.target = t, e.init_instance_callback = this.handleSuccess, window.tinymce.init(e).catch(this.handleError);
       }, beforeDestroy: function beforeDestroy() {
         this.$emit("destroy", this.editorInstance), window.tinymce.remove(this.$refs.textarea);
@@ -8780,24 +8780,24 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   }, function (e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 }), t.component = void 0;var r,
-        i = n(2),
-        o = (r = i) && r.__esModule ? r : { default: r };var a = { component: o.default, install: function install(e) {
-        e.component("vue-mce", o.default);
-      } };t.component = o.default, t.default = a;
+        o = n(2),
+        i = (r = o) && r.__esModule ? r : { default: r };var a = { component: i.default, install: function install(e) {
+        e.component("vue-mce", i.default);
+      } };t.component = i.default, t.default = a;
   }, function (e, t, n) {
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 });var r = n(0),
-        i = n.n(r);for (var o in r) {
-      "default" !== o && function (e) {
+        o = n.n(r);for (var i in r) {
+      "default" !== i && function (e) {
         n.d(t, e, function () {
           return r[e];
         });
-      }(o);
+      }(i);
     }var a = n(9),
         s = !1;var c = function c(e) {
       s || n(3);
     },
-        u = n(8)(i.a, a.a, !1, c, null, null);u.options.__file = "src\\component\\index.vue", t.default = u.exports;
+        u = n(8)(o.a, a.a, !1, c, null, null);u.options.__file = "src\\component\\index.vue", t.default = u.exports;
   }, function (e, t, n) {
     var r = n(4);"string" == typeof r && (r = [[e.i, r, ""]]), r.locals && (e.exports = r.locals);n(6)("92224d4a", r, !1, {});
   }, function (e, t, n) {
@@ -8809,24 +8809,24 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           var n = function (e, t) {
             var n = e[1] || "",
                 r = e[3];if (!r) return n;if (t && "function" == typeof btoa) {
-              var i = (a = r, "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(a)))) + " */"),
-                  o = r.sources.map(function (e) {
+              var o = (a = r, "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(a)))) + " */"),
+                  i = r.sources.map(function (e) {
                 return "/*# sourceURL=" + r.sourceRoot + e + " */";
-              });return [n].concat(o).concat([i]).join("\n");
+              });return [n].concat(i).concat([o]).join("\n");
             }var a;return [n].join("\n");
           }(t, e);return t[2] ? "@media " + t[2] + "{" + n + "}" : n;
         }).join("");
       }, t.i = function (e, n) {
-        "string" == typeof e && (e = [[null, e, ""]]);for (var r = {}, i = 0; i < this.length; i++) {
-          var o = this[i][0];"number" == typeof o && (r[o] = !0);
-        }for (i = 0; i < e.length; i++) {
-          var a = e[i];"number" == typeof a[0] && r[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), t.push(a));
+        "string" == typeof e && (e = [[null, e, ""]]);for (var r = {}, o = 0; o < this.length; o++) {
+          var i = this[o][0];"number" == typeof i && (r[i] = !0);
+        }for (o = 0; o < e.length; o++) {
+          var a = e[o];"number" == typeof a[0] && r[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), t.push(a));
         }
       }, t;
     };
   }, function (e, t, n) {
-    var r = "undefined" != typeof document;if ("undefined" != typeof DEBUG && DEBUG && !r) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var i = n(7),
-        o = {},
+    var r = "undefined" != typeof document;if ("undefined" != typeof DEBUG && DEBUG && !r) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var o = n(7),
+        i = {},
         a = r && (document.head || document.getElementsByTagName("head")[0]),
         s = null,
         c = 0,
@@ -8837,16 +8837,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         p = "undefined" != typeof navigator && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function h(e) {
       for (var t = 0; t < e.length; t++) {
         var n = e[t],
-            r = o[n.id];if (r) {
-          r.refs++;for (var i = 0; i < r.parts.length; i++) {
-            r.parts[i](n.parts[i]);
-          }for (; i < n.parts.length; i++) {
-            r.parts.push(v(n.parts[i]));
+            r = i[n.id];if (r) {
+          r.refs++;for (var o = 0; o < r.parts.length; o++) {
+            r.parts[o](n.parts[o]);
+          }for (; o < n.parts.length; o++) {
+            r.parts.push(v(n.parts[o]));
           }r.parts.length > n.parts.length && (r.parts.length = n.parts.length);
         } else {
-          var a = [];for (i = 0; i < n.parts.length; i++) {
-            a.push(v(n.parts[i]));
-          }o[n.id] = { id: n.id, refs: 1, parts: a };
+          var a = [];for (o = 0; o < n.parts.length; o++) {
+            a.push(v(n.parts[o]));
+          }i[n.id] = { id: n.id, refs: 1, parts: a };
         }
       }
     }function m() {
@@ -8857,11 +8857,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           r = document.querySelector("style[" + l + '~="' + e.id + '"]');if (r) {
         if (u) return f;r.parentNode.removeChild(r);
       }if (p) {
-        var i = c++;r = s || (s = m()), t = _.bind(null, r, i, !1), n = _.bind(null, r, i, !0);
+        var o = c++;r = s || (s = m()), t = _.bind(null, r, o, !1), n = _.bind(null, r, o, !0);
       } else r = m(), t = function (e, t) {
         var n = t.css,
             r = t.media,
-            i = t.sourceMap;r && e.setAttribute("media", r);d.ssrId && e.setAttribute(l, t.id);i && (n += "\n/*# sourceURL=" + i.sources[0] + " */", n += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(i)))) + " */");if (e.styleSheet) e.styleSheet.cssText = n;else {
+            o = t.sourceMap;r && e.setAttribute("media", r);d.ssrId && e.setAttribute(l, t.id);o && (n += "\n/*# sourceURL=" + o.sources[0] + " */", n += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(o)))) + " */");if (e.styleSheet) e.styleSheet.cssText = n;else {
           for (; e.firstChild;) {
             e.removeChild(e.firstChild);
           }e.appendChild(document.createTextNode(n));
@@ -8874,14 +8874,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         } else n();
       };
     }e.exports = function (e, t, n, r) {
-      u = n, d = r || {};var a = i(e, t);return h(a), function (t) {
+      u = n, d = r || {};var a = o(e, t);return h(a), function (t) {
         for (var n = [], r = 0; r < a.length; r++) {
-          var s = a[r];(c = o[s.id]).refs--, n.push(c);
-        }t ? h(a = i(e, t)) : a = [];for (r = 0; r < n.length; r++) {
+          var s = a[r];(c = i[s.id]).refs--, n.push(c);
+        }t ? h(a = o(e, t)) : a = [];for (r = 0; r < n.length; r++) {
           var c;if (0 === (c = n[r]).refs) {
             for (var u = 0; u < c.parts.length; u++) {
               c.parts[u]();
-            }delete o[c.id];
+            }delete i[c.id];
           }
         }
       };
@@ -8889,26 +8889,26 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         g = (y = [], function (e, t) {
       return y[e] = t, y.filter(Boolean).join("\n");
     });function _(e, t, n, r) {
-      var i = n ? "" : r.css;if (e.styleSheet) e.styleSheet.cssText = g(t, i);else {
-        var o = document.createTextNode(i),
-            a = e.childNodes;a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(o, a[t]) : e.appendChild(o);
+      var o = n ? "" : r.css;if (e.styleSheet) e.styleSheet.cssText = g(t, o);else {
+        var i = document.createTextNode(o),
+            a = e.childNodes;a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(i, a[t]) : e.appendChild(i);
       }
     }
   }, function (e, t) {
     e.exports = function (e, t) {
-      for (var n = [], r = {}, i = 0; i < t.length; i++) {
-        var o = t[i],
-            a = o[0],
-            s = { id: e + ":" + i, css: o[1], media: o[2], sourceMap: o[3] };r[a] ? r[a].parts.push(s) : n.push(r[a] = { id: a, parts: [s] });
+      for (var n = [], r = {}, o = 0; o < t.length; o++) {
+        var i = t[o],
+            a = i[0],
+            s = { id: e + ":" + o, css: i[1], media: i[2], sourceMap: i[3] };r[a] ? r[a].parts.push(s) : n.push(r[a] = { id: a, parts: [s] });
       }return n;
     };
   }, function (e, t) {
-    e.exports = function (e, t, n, r, i, o) {
+    e.exports = function (e, t, n, r, o, i) {
       var a,
           s = e = e || {},
           c = _typeof(e.default);"object" !== c && "function" !== c || (a = e, s = e.default);var u,
-          f = "function" == typeof s ? s.options : s;if (t && (f.render = t.render, f.staticRenderFns = t.staticRenderFns, f._compiled = !0), n && (f.functional = !0), i && (f._scopeId = i), o ? (u = function u(e) {
-        (e = e || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) || "undefined" == typeof __VUE_SSR_CONTEXT__ || (e = __VUE_SSR_CONTEXT__), r && r.call(this, e), e && e._registeredComponents && e._registeredComponents.add(o);
+          f = "function" == typeof s ? s.options : s;if (t && (f.render = t.render, f.staticRenderFns = t.staticRenderFns, f._compiled = !0), n && (f.functional = !0), o && (f._scopeId = o), i ? (u = function u(e) {
+        (e = e || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) || "undefined" == typeof __VUE_SSR_CONTEXT__ || (e = __VUE_SSR_CONTEXT__), r && r.call(this, e), e && e._registeredComponents && e._registeredComponents.add(i);
       }, f._ssrRegister = u) : r && (u = r), u) {
         var d = f.functional,
             l = d ? f.render : f.beforeCreate;d ? (f._injectStyles = u, f.render = function (e, t) {
@@ -8921,7 +8921,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var r = function r() {
       var e = this.$createElement,
           t = this._self._c || e;return t("div", { staticClass: "tinymce" }, [t("div", { ref: "textarea", staticClass: "tinymce__init-area" }), this._v(" "), t("input", { attrs: { name: this.name, hidden: "" }, domProps: { value: this.content } })]);
-    };r._withStripped = !0;var i = { render: r, staticRenderFns: [] };t.a = i;
+    };r._withStripped = !0;var o = { render: r, staticRenderFns: [] };t.a = o;
   }]);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
