@@ -1,7 +1,7 @@
 {
   "name": "vue-mce",
   "version": "1.4.1",
-  "description": "Best VueJS component for TinyMCE",
+  "description": "VueJS component for TinyMCE",
   "main": "dist/vue-mce.common.js",
   "types": "types/index.d.ts",
   "engines": {
@@ -15,11 +15,11 @@
   ],
   "scripts": {
     "dev": "webpack --config config/common.config.js --watch",
-    "build": "npm run build:web && npm run build:common && npm run build:test",
+    "build": "yarn build:web && yarn build:common && yarn build:test",
     "build:web": "webpack --config config/web.config.js",
     "build:common": "webpack --config config/common.config.js",
     "build:test": "webpack --config config/test.config.js",
-    "test": "npm run test:types && npm run test:unit && npm run test:e2e",
+    "test": "yarn test:types && yarn test:unit && yarn test:e2e",
     "test:types": "tsc -p test/types/tsconfig.json",
     "test:unit": "babel-node test/unit/runner.js",
     "test:e2e": "babel-node test/e2e/runner.js"
@@ -29,14 +29,12 @@
     "type": "git",
     "url": "git+https://github.com/Eazymov/vue-mce.git"
   },
-  "keywords": [
-    "vuejs",
-    "vue",
-    "tinymce",
-    "component",
-    "eazymov",
-    "javascript"
-  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": ["vuejs", "vue", "tinymce", "component", "eazymov", "javascript"],
   "author": "Eduard Troshin <eazymovcode@gmail.com>",
   "license": "MIT",
   "readme": "",
@@ -44,13 +42,7 @@
     "url": "https://github.com/Eazymov/vue-mce/issues"
   },
   "homepage": "https://github.com/Eazymov/vue-mce#readme",
-  "files": [
-    "src",
-    "dist",
-    "types",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["src", "dist", "types", "LICENSE", "README.md"],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
