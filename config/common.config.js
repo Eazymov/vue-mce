@@ -1,16 +1,14 @@
-const merge = require('webpack-merge');
-const baseConfig = require('./base.config.js');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const merge = require('webpack-merge')
+const baseConfig = require('./base.config.js')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = merge(baseConfig, {
   entry: {
-    'vue-mce.common': './src/vue-mce.ts',
+    'vue-mce.common': './src/vue-mce.js',
   },
   output: {
     library: 'VueMce',
     libraryTarget: 'umd',
   },
-  plugins: [
-    new UglifyJSPlugin(),
-  ],
-});
+  plugins: [new UglifyJSPlugin()],
+})
