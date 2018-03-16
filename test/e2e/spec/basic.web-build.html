@@ -15,10 +15,10 @@
 <body>
   <div id="root">
     <vue-mce name="tinymce" v-model="value" v-if="showEditor" @init="handleInit" @error="handleError" @input="handleInput" @change="handleChange"
-      @destroy="handleDestroy" :config="config" :initial-value="initialValue">
+      @destroy="handleDestroy" :config="config">
     </vue-mce>
     <div id="output" v-html="value"></div>
-    <button id="button" @click="initialValue = 'CHANGED'">Input</button>
+    <button id="button" @click="value = 'CHANGED'">Input</button>
     <button id="destroy" @click="showEditor = false">Destroy</button>
   </div>
 
@@ -30,7 +30,6 @@
 
       data: () => ({
         value: '',
-        initialValue: '',
         showEditor: true,
         config: {},
       }),

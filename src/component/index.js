@@ -8,10 +8,6 @@ export default {
       type: String,
       default: '',
     },
-    initialValue: {
-      type: String,
-      default: '',
-    },
     name: {
       type: String,
       default: '',
@@ -34,7 +30,7 @@ export default {
       this.editorInstance = editor
       this.$emit('init', editor)
 
-      const content = this.initialValue || this.value
+      const content = this.value
 
       editor.setContent(content)
       editor.on('input change undo redo setcontent', this.handleInput)
@@ -72,8 +68,10 @@ export default {
   },
 
   watch: {
-    initialValue(newValue) {
-      this.setContent(newValue)
+    value(newValue) {
+      if (newValue !== this.content) {
+        this.setContent(newValue)
+      }
     },
   },
 
@@ -93,6 +91,7 @@ export default {
 
   beforeDestroy() {
     this.$emit('destroy', this.editorInstance)
+
     window.tinymce.remove(this.$refs.textarea)
   },
 }
