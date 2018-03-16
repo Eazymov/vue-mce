@@ -7,8 +7,10 @@ module.exports = merge(baseConfig, {
     'vue-mce.common': './src/vue-mce.js',
   },
   output: {
-    library: 'VueMce',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
   },
   plugins: [new UglifyJSPlugin()],
+  externals: {
+    vue: 'Vue',
+  },
 })

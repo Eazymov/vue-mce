@@ -4,8 +4,6 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '../dist'),
-    library: 'vue-mce',
-    libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js', '.vue'],

@@ -6,15 +6,17 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const pkg = require('../package.json')
 
 const banner =
-  '/*!\n' +
-  ' * vue-mce v' + pkg.version + '\n' +
-  ' * (c) 2017 - Present, Eduard Troshin\n' +
-  ' * Released under the MIT License.\n' +
-  ' *'
+  'vue-mce v' + pkg.version + '\n' +
+  '(c) 2017 - Present, Eduard Troshin\n' +
+  'Released under the MIT License.'
 
 module.exports = merge(baseConfig, {
   entry: {
     'vue-mce.web': './src/index.js',
+  },
+  output: {
+    library: 'vue-mce',
+    libraryTarget: 'window',
   },
   plugins: [new UglifyJSPlugin(), new webpack.BannerPlugin({ banner })],
   externals: {

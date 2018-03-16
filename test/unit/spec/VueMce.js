@@ -2,11 +2,11 @@ import Vue from 'vue'
 import VueMce from 'package'
 
 describe('VueMce', () => {
-  it('should have property `component`', () => {
+  it('has property `component`', () => {
     expect(VueMce.component).toBeDefined()
   })
 
-  it('should have method `install`', () => {
+  it('has method `install`', () => {
     expect(VueMce.install).toBeDefined()
   })
 })
