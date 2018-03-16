@@ -14,7 +14,6 @@
     }
   ],
   "scripts": {
-    "dev": "webpack --config config/common.config.js --watch",
     "build": "yarn build:web && yarn build:common && yarn build:test",
     "build:web": "webpack --config config/web.config.js",
     "build:common": "webpack --config config/common.config.js",

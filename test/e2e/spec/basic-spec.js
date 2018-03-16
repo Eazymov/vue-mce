@@ -1,6 +1,5 @@
 require('dotenv').config()
 
-const path = require('path')
 const host = process.env.TEST_HOST || 'localhost'
 const port = process.env.TEST_PORT || '8080'
 const dir = process.env.E2E_TEST_DIR || '/test/e2e/spec/'

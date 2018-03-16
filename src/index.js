@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import VueMce from './vue-mce'
 
 if (window) {

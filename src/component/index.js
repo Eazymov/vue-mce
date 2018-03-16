@@ -25,6 +25,7 @@ export default {
 
   methods: {
     handleError(err) {
+      // eslint-disable-next-line no-console
       console.error(err)
       this.$emit('error', err)
     },
@@ -78,7 +79,7 @@ export default {
 
   mounted() {
     if (!window.tinymce) {
-      return this.handleError(new Error("TinyMce wasn't found"))
+      return this.handleError(new Error('TinyMce was not found'))
     }
 
     const config = this.config
