@@ -34,14 +34,7 @@
     "singleQuote": true,
     "trailingComma": "all"
   },
-  "keywords": [
-    "vuejs",
-    "vue",
-    "tinymce",
-    "component",
-    "eazymov",
-    "javascript"
-  ],
+  "keywords": ["vuejs", "vue", "tinymce", "component", "eazymov", "javascript"],
   "author": "Eduard Troshin <eazymovcode@gmail.com>",
   "license": "MIT",
   "readme": "",
@@ -49,13 +42,7 @@
     "url": "https://github.com/Eazymov/vue-mce/issues"
   },
   "homepage": "https://github.com/Eazymov/vue-mce#readme",
-  "files": [
-    "src",
-    "dist",
-    "types",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["src", "dist", "types", "LICENSE", "README.md"],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",

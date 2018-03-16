@@ -7,4 +7,7 @@ module.exports = merge(baseConfig, {
     'vue-mce.web': './src/index.js',
   },
   plugins: [new UglifyJSPlugin()],
+  externals: {
+    vue: 'Vue',
+  },
 })
