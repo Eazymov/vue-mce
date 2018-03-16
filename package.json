@@ -4,6 +4,8 @@
   "description": "VueJS component for TinyMCE",
   "main": "dist/vue-mce.common.js",
   "types": "types/index.d.ts",
+  "unpkg": "dist/vue-mce.web.js",
+  "jsdelivr": "dist/vue-mce.web.js",
   "engines": {
     "node": ">=6.0.0"
   },

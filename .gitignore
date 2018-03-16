@@ -8,7 +8,6 @@ selenium-debug.log*
 
 # Dev things
 .vscode
-dist/
 
 # Runtime data
 pids
