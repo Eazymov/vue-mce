@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import VueMce from 'package';
+import Vue from 'vue'
+import VueMce from 'package'
 
-Vue.use(VueMce);
+Vue.use(VueMce)
 
 const App = {
-  render (createElement) {
-    const self = this;
+  render(createElement) {
+    const self = this
     const {
       value,
       showEditor,
@@ -15,58 +15,71 @@ const App = {
       handleInput,
       handleChange,
       handleDestroy,
-    } = self;
+    } = self
 
-    return createElement('div', {
-      attrs: {
-        id: 'root',
+    return createElement(
+      'div',
+      {
+        attrs: {
+          id: 'root',
+        },
       },
-    }, [
-      showEditor && createElement('vue-mce', {
-        props: {
-          value,
-          initialValue,
-        },
-        on: {
-          init: handleInit,
-          error: handleError,
-          input (value) {
-            handleInput(value);
-            self.value = value;
+      [
+        showEditor &&
+          createElement('vue-mce', {
+            props: {
+              value,
+              initialValue,
+            },
+            on: {
+              init: handleInit,
+              error: handleError,
+              input(value) {
+                handleInput(value)
+                self.value = value
+              },
+              change: handleChange,
+              destroy: handleDestroy,
+            },
+          }),
+        createElement('div', {
+          attrs: {
+            id: 'output',
           },
-          change: handleChange,
-          destroy: handleDestroy,
-        },
-      }),
-      createElement('div', {
-        attrs: {
-          id: 'output',
-        },
-        domProps: {
-          innerHTML: value,
-        }
-      }),
-      createElement('button', {
-        attrs: {
-          id: 'button',
-        },
-        on: {
-          click () {
-            self.initialValue = 'CHANGED';
+          domProps: {
+            innerHTML: value,
           },
-        },
-      }, 'Input'),
-      createElement('button', {
-        attrs: {
-          id: 'destroy',
-        },
-        on: {
-          click () {
-            self.showEditor = false;
+        }),
+        createElement(
+          'button',
+          {
+            attrs: {
+              id: 'button',
+            },
+            on: {
+              click() {
+                self.initialValue = 'CHANGED'
+              },
+            },
           },
-        },
-      }, 'Destroy'),
-    ]);
+          'Input',
+        ),
+        createElement(
+          'button',
+          {
+            attrs: {
+              id: 'destroy',
+            },
+            on: {
+              click() {
+                self.showEditor = false
+              },
+            },
+          },
+          'Destroy',
+        ),
+      ],
+    )
   },
 
   data: () => ({
@@ -75,41 +88,41 @@ const App = {
     showEditor: true,
   }),
 
-  created () {
+  created() {
     window.editor = {
       init: false,
       error: false,
       input: false,
       change: false,
       destroy: false,
-    };
+    }
   },
 
   methods: {
-    handleInit () {
-      window.editor.init = true;
+    handleInit() {
+      window.editor.init = true
     },
 
-    handleError () {
-      window.editor.error = true;
+    handleError() {
+      window.editor.error = true
     },
 
-    handleInput () {
-      window.editor.input = true;
+    handleInput() {
+      window.editor.input = true
     },
 
-    handleChange () {
-      window.editor.change = true;
+    handleChange() {
+      window.editor.change = true
     },
 
-    handleDestroy () {
-      window.editor.destroy = true;
+    handleDestroy() {
+      window.editor.destroy = true
     },
   },
-};
+}
 
 new Vue({
   el: '#root',
-  render: (h) => h(App),
-  components: { App, },
-});
+  render: h => h(App),
+  components: { App },
+})

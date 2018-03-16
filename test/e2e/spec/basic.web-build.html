@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <link rel="shortcut icon" type="image/x-icon" href="data:,">
-  
+
   <title>Web build</title>
 
   <script src="/tinymce/tinymce.min.js"></script>
 </head>
+
 <body>
   <div id="root">
-    <vue-mce
-      name="tinymce"
-      v-model="value"
-      v-if="showEditor"
-      @init="handleInit"
-      @error="handleError"
-      @input="handleInput"
-      @change="handleChange"
-      @destroy="handleDestroy"
-      :config="config"
-      :initial-value="initialValue">
+    <vue-mce name="tinymce" v-model="value" v-if="showEditor" @init="handleInit" @error="handleError" @input="handleInput" @change="handleChange"
+      @destroy="handleDestroy" :config="config" :initial-value="initialValue">
     </vue-mce>
     <div id="output" v-html="value"></div>
     <button id="button" @click="initialValue = 'CHANGED'">Input</button>
@@ -42,7 +35,7 @@
         config: {},
       }),
 
-      created () {
+      created() {
         window.editor = {
           init: false,
           error: false,
@@ -53,27 +46,28 @@
       },
 
       methods: {
-        handleInit () {
+        handleInit() {
           window.editor.init = true;
         },
 
-        handleError () {
+        handleError() {
           window.editor.error = true;
         },
 
-        handleInput () {
+        handleInput() {
           window.editor.input = true;
         },
 
-        handleChange () {
+        handleChange() {
           window.editor.change = true;
         },
 
-        handleDestroy () {
+        handleDestroy() {
           window.editor.destroy = true;
         },
       },
     });
   </script>
 </body>
+
 </html>

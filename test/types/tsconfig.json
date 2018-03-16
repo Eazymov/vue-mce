@@ -21,7 +21,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
-  "files": [
-    "./index.ts"
-  ]
+  "files": ["./index.ts"]
 }
