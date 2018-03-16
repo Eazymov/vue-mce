@@ -1,5 +1,5 @@
 /*!
- * vue-mce v1.4.1
+ * vue-mce v1.5.0
  * (c) 2017 - Present, Eduard Troshin
  * Released under the MIT License.
  */
