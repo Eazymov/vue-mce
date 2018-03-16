@@ -9,7 +9,6 @@ const App = {
     const {
       value,
       showEditor,
-      initialValue,
       handleInit,
       handleError,
       handleInput,
@@ -29,7 +28,6 @@ const App = {
           createElement('vue-mce', {
             props: {
               value,
-              initialValue,
             },
             on: {
               init: handleInit,
@@ -58,7 +56,7 @@ const App = {
             },
             on: {
               click() {
-                self.initialValue = 'CHANGED'
+                self.value = 'CHANGED'
               },
             },
           },
@@ -84,7 +82,6 @@ const App = {
 
   data: () => ({
     value: '',
-    initialValue: '',
     showEditor: true,
   }),
 

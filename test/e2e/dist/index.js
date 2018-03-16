@@ -314,7 +314,6 @@ var App = {
     var self = this;
     var value = self.value,
         showEditor = self.showEditor,
-        initialValue = self.initialValue,
         handleInit = self.handleInit,
         handleError = self.handleError,
         handleInput = self.handleInput,
@@ -328,8 +327,7 @@ var App = {
       }
     }, [showEditor && createElement('vue-mce', {
       props: {
-        value: value,
-        initialValue: initialValue
+        value: value
       },
       on: {
         init: handleInit,
@@ -355,7 +353,7 @@ var App = {
       },
       on: {
         click: function click() {
-          self.initialValue = 'CHANGED';
+          self.value = 'CHANGED';
         }
       }
     }, 'Input'), createElement('button', {
@@ -374,7 +372,6 @@ var App = {
   data: function data() {
     return {
       value: '',
-      initialValue: '',
       showEditor: true
     };
   },
