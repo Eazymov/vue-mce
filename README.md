@@ -107,27 +107,15 @@ new Vue({
   }),
 });
 ```
-**Important:** if you will change the value **after** VueMce component init, it won't trigger update in editor.
-
-## initialValue
-
-VueMce monitors changes in initialValue and updates tinymce content when initialValue changes. Has priority over the `value` prop.
-
-```html
-<template>
-  <vue-mce :initial-value="initialValue" />
-</template>
-```
 
 ## v-model
 
-You can use the `v-model` directive to create data-binding. Every time you change content in editor, your value updates
+You can use the `v-model` directive to create two-way data-binding.
 ```html
 <template>
   <vue-mce v-model="myValue" />
 </template>
 ```
-**Important:** in this case `v-model` provides only **one-way-data-binding**, i.e VueMce will set your value as editor content only when tinymce init.
 
 ## ref
 

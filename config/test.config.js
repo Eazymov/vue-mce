@@ -1,6 +1,6 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const baseConfig = require('./base.config.js');
+const path = require('path')
+const merge = require('webpack-merge')
+const baseConfig = require('./base.config.js')
 
 module.exports = merge(baseConfig, {
   entry: {
@@ -8,5 +8,6 @@ module.exports = merge(baseConfig, {
   },
   output: {
     path: path.resolve(__dirname, '../test/e2e/dist'),
+    libraryTarget: 'window',
   },
-});
+})

@@ -1,9 +1,11 @@
 {
   "name": "vue-mce",
-  "version": "1.4.1",
-  "description": "Best VueJS component for TinyMCE",
+  "version": "1.5.0",
+  "description": "VueJS component for TinyMCE",
   "main": "dist/vue-mce.common.js",
   "types": "types/index.d.ts",
+  "unpkg": "dist/vue-mce.web.js",
+  "jsdelivr": "dist/vue-mce.web.js",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -14,12 +16,11 @@
     }
   ],
   "scripts": {
-    "dev": "webpack --config config/common.config.js --watch",
-    "build": "npm run build:web && npm run build:common && npm run build:test",
+    "build": "yarn build:web && yarn build:common && yarn build:test",
     "build:web": "webpack --config config/web.config.js",
     "build:common": "webpack --config config/common.config.js",
     "build:test": "webpack --config config/test.config.js",
-    "test": "npm run test:types && npm run test:unit && npm run test:e2e",
+    "test": "yarn test:types && yarn test:unit && yarn test:e2e",
     "test:types": "tsc -p test/types/tsconfig.json",
     "test:unit": "babel-node test/unit/runner.js",
     "test:e2e": "babel-node test/e2e/runner.js"
@@ -28,6 +29,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eazymov/vue-mce.git"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "keywords": [
     "vuejs",
@@ -70,7 +76,6 @@
     "selenium-server": "^3.7.0",
     "selenium-standalone": "^6.11.0",
     "style-loader": "^0.19.0",
-    "ts-loader": "^3.1.1",
     "typescript": "^2.6.1",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "vue": "^2.5.3",

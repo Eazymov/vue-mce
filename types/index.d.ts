@@ -1,7 +1,7 @@
-declare module "vue-mce";
+declare module 'vue-mce'
 
-import { VueMce, VueMceComponent } from './vue-mce';
+import { VueMce, VueMceComponent } from './vue-mce'
 
-export { VueMceComponent };
+export { VueMceComponent }
 
-export default VueMce;
+export default VueMce
