@@ -25,6 +25,7 @@ export default {
 
   methods: {
     handleError(err) {
+      console.error(err)
       this.$emit('error', err)
     },
 
