@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import VueMce from 'package'
+
+import VueMce from '../../../'
 
 Vue.use(VueMce)
 
