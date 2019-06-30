@@ -1,16 +1,3 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"]
-      }
-    }]
-  ],
-  "plugins": [
-    ["module-resolver", {
-      "alias": {
-        "package": "./"
-      }
-    }]
-  ]
+  "presets": ["@babel/preset-env"]
 }

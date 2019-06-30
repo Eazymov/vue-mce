@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import VueMce, { VueMceComponent } from 'package'
+
+import VueMce, { VueMceComponent } from '../../'
 
 Vue.use(VueMce)
 

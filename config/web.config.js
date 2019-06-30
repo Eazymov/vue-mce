@@ -1,10 +1,10 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const baseConfig = require('./base.config.js')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const pkg = require('../package.json')
+const baseConfig = require('./base.config.js')
 
+// prettier-ignore
 const banner =
   'vue-mce v' + pkg.version + '\n' +
   '(c) 2017 - Present, Eduard Troshin\n' +
@@ -15,10 +15,10 @@ module.exports = merge(baseConfig, {
     'vue-mce.web': './src/index.js',
   },
   output: {
-    library: 'vue-mce',
+    library: 'VueMce',
     libraryTarget: 'window',
   },
-  plugins: [new UglifyJSPlugin(), new webpack.BannerPlugin({ banner })],
+  plugins: [new webpack.BannerPlugin({ banner })],
   externals: {
     vue: 'Vue',
   },
