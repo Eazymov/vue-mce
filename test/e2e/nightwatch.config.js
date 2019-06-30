@@ -10,7 +10,7 @@ module.exports = {
     start_process: true,
     server_path: require('selenium-server').path,
     log_path: '',
-    port: 4444,
+    port: 53555,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
     },
