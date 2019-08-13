@@ -1,6 +1,6 @@
 {
   "name": "vue-mce",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "VueJS component for TinyMCE",
   "main": "dist/vue-mce.common.js",
   "types": "types/index.d.ts",
